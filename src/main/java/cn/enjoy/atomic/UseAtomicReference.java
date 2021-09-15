@@ -10,10 +10,12 @@ public class UseAtomicReference {
     public static void main(String[] args) {
         UserInfo userInfo = new UserInfo("haha", 18);
         userRef.set(userInfo);
+//        userInfo.setAge(30);
 
         UserInfo updateUser = new UserInfo("difashi", 28);
 
-        userRef.compareAndSet(userInfo, updateUser);
+        boolean b = userRef.compareAndSet(userInfo, updateUser);
+        System.out.println(b);
 
         System.out.println(userInfo.toString());
         System.out.println(userRef.get().toString());
@@ -22,6 +24,14 @@ public class UseAtomicReference {
     static class UserInfo{
         private String name;
         private int age;
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public void setAge(int age) {
+            this.age = age;
+        }
 
         public UserInfo(String name, int age) {
             this.name = name;
