@@ -13,9 +13,11 @@ public class UseAtomicReference {
 //        userInfo.setAge(30);//如果是本身线程修改值，会默认为内存地址不变
 
         UserInfo updateUser = new UserInfo("difashi", 28);
+        UserInfo updateUser2 = new UserInfo("difashi2", 28);
 
-        boolean b = userRef.compareAndSet(userInfo, updateUser);
-        System.out.println(b);
+        //userInfo一直没变，但是 userRef.get() 变了，所以 updateUser2 失败了
+        System.out.println(userRef.compareAndSet(userInfo, updateUser));
+        System.out.println(userRef.compareAndSet(userInfo, updateUser2));
 
         System.out.println(userInfo.toString());
         System.out.println(userRef.get().toString());

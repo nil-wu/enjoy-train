@@ -10,18 +10,11 @@ public class UseAtomicReference2 {
     public static void main(String[] args) throws Exception{
         UserInfo userInfo = new UserInfo("haha", 18);
         userRef.set(userInfo);
-//        userInfo.setAge(30);//如果是本身线程修改值，会默认为内存地址不变
-
-//        UserInfo updateUser = new UserInfo("difashi", 28);
-////
-////        boolean b = userRef.compareAndSet(userInfo, updateUser);
-////        System.out.println(b);
-
-
 
         Thread thread1 = new Thread(new Runnable() {
             @Override
             public void run() {
+                System.out.println("111111" + userRef.get().toString());
                 System.out.println(Thread.currentThread().getName()
                         + "当前变量值：" + userRef.get().toString() + "-" + userRef.compareAndSet(userInfo, new UserInfo("difashi", 28)));
             }
@@ -30,7 +23,8 @@ public class UseAtomicReference2 {
         Thread thread2 = new Thread(new Runnable() {
             @Override
             public void run() {
-//                userInfo.setName("thread2 修改的");
+                System.out.println("222222" + userRef.get().toString());
+                //这里的 userInfo 不变，但是 userRef.get() 变了，所以原子操作失败，返回false
                 System.out.println(Thread.currentThread().getName()
                         + "当前变量值：" + userRef.get().toString() + "-" + userRef.compareAndSet(userInfo, new UserInfo("difashi2", 30)));
             }
