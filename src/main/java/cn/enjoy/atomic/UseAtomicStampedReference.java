@@ -13,13 +13,13 @@ public class UseAtomicStampedReference {
         final int oldStamp = asr.getStamp();
         final String oldReference = asr.getReference();
 
-        System.out.println("old stamp:" + oldStamp);
+        System.out.println("原始数据：" + oldReference + "=======" + oldStamp);
 
         Thread thread1 = new Thread(new Runnable() {
             @Override
             public void run() {
                 System.out.println(Thread.currentThread().getName()
-                        + "当前变量值：" + oldReference + " 当前版本：" + oldStamp + asr.compareAndSet(oldReference, oldReference + "java", oldStamp, oldStamp + 1));
+                        + "当前变量值：" + oldReference + " 当前版本：" + oldStamp + "-" + asr.compareAndSet(oldReference, oldReference + "java", oldStamp, oldStamp + 1));
             }
         });
 
@@ -27,7 +27,7 @@ public class UseAtomicStampedReference {
             @Override
             public void run() {
                 System.out.println(Thread.currentThread().getName()
-                        + "当前变量值：" + asr.getReference() + " 当前版本：" + asr.getStamp() + asr.compareAndSet(oldReference, oldReference + "C", oldStamp, oldStamp + 1));
+                        + "当前变量值：" + asr.getReference() + " 当前版本：" + asr.getStamp() + "-" + asr.compareAndSet(oldReference, oldReference + "C", oldStamp, oldStamp + 1));
             }
         });
 
