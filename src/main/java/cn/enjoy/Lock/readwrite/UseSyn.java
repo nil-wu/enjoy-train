@@ -14,13 +14,13 @@ public class UseSyn implements GoodsService {
     }
 
     @Override
-    public GoodsInfo getNum() {
+    public synchronized GoodsInfo getNum() {
         SleepTools.ms(5);
         return this.goodsInfo;
     }
 
     @Override
-    public void setNum(int number) {
+    public synchronized void setNum(int number) {
         SleepTools.ms(5);
         goodsInfo.changeNumber(number);
     }
