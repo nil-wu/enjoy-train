@@ -8,7 +8,7 @@ import java.util.concurrent.CountDownLatch;
 public class BusiApp {
 
     static final int readWriteRatio = 10;//读写线程的比例
-    static final int minthreadCount = 3;//最少线程数
+    static final int minthreadCount = 3;//写线程数
 //    static CountDownLatch latch = new CountDownLatch(1);
 
     /**
@@ -66,10 +66,12 @@ public class BusiApp {
 
     public static void main(String[] args) {
         GoodsInfo goodsInfo = new GoodsInfo("Cup", 100000, 10000);
-//        GoodsService goodsService = new UseSyn(goodsInfo);
-        GoodsService goodsService = new UseRwLock(goodsInfo);
+        GoodsService goodsService = new UseSyn(goodsInfo);
+//        GoodsService goodsService = new UseRwLock(goodsInfo);
+        //写线程数 3个
         for (int i = 0; i < minthreadCount; i++) {
             Thread setT = new Thread(new SetThread(goodsService));
+            //每起一个写线程，就起10个读线程
             for (int j = 0; j < readWriteRatio; j++) {
                 Thread getT = new Thread(new GetThread(goodsService));
                 getT.start();
