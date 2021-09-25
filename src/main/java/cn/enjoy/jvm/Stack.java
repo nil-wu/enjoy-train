@@ -21,6 +21,7 @@ public class Stack {
     public Object pop(){
         size = size -1 ;
         Object o = elements[size];
+        elements[size] = null;//重点，没有这个会内存泄漏
         return o;
     }
 
