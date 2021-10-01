@@ -14,6 +14,7 @@ public class Test1 {
         person.setId("2");
 
         System.out.println(person);
+        System.out.println("333");
     }
 
     public void getkk(){
