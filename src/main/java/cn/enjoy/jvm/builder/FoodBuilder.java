@@ -1,7 +1,8 @@
 package cn.enjoy.jvm.builder;
 
-import org.omg.CORBA.PUBLIC_MEMBER;
-
+/**
+ * 省掉了抽象建造者、导演者两个角色
+ */
 public class FoodBuilder {
 
     /*required*/

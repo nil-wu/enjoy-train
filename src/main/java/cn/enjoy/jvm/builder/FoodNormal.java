@@ -32,7 +32,7 @@ public class FoodNormal {
     //3-6个参数要全部再写一次
 
     public static void main(String[] args) {
-        new FoodNormal("food1", 1200, 200, 0, 0, 300, 100)
+        new FoodNormal("food1", 1200, 200, 0, 0, 300, 100);
     }
 
 }
