@@ -26,7 +26,7 @@ public class Express {
     }
 
     public synchronized void waitKm(){
-        System.out.println(Thread.currentThread().getId() + " 获取锁");
+        System.out.println(Thread.currentThread().getId() + " waitKm获取锁");
 
         while (this.km <= 100) {
             try {
@@ -41,8 +41,11 @@ public class Express {
     }
 
     public synchronized void waitSite(){
+        System.out.println(Thread.currentThread().getId() + " waitSite获取锁");
+
         while (CITY.equals(this.site)) {
             try {
+                System.out.println(Thread.currentThread().getId() + " 调用wait方法释放锁");
                 wait();
                 System.out.println("check site thread[" + Thread.currentThread().getId() + "] is be notified");
             } catch (InterruptedException e) {
