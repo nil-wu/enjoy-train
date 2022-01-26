@@ -7,7 +7,7 @@ public class Test01 {
         @Override
         public void run() {
             try {
-                Process process = Runtime.getRuntime().exec("F:\\download\\BQ2__Display_Pilot_2.2.08.0_RC3-DisplayPilot.exe");
+                Process process = Runtime.getRuntime().exec("F:\\download\\BQ2__Display_Pilot_2.2.08.0_RC3-DisplayPilot.exe") ;
             } catch (Exception e) {
                 e.printStackTrace();
             }
