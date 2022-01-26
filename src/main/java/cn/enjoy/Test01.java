@@ -17,7 +17,7 @@ public class Test01 {
 
 
     public static void getHaha(){
-
+        System.out.println("123");
     }
 
     public static void main(String[] args) throws Exception{
