@@ -64,6 +64,6 @@ public class AioClientHandler implements CompletionHandler<Void,AioClientHandler
         writeBuffer.flip();
 
         //异步写
-        clientChannel.write(writeBuffer,writeBuffer,new Aio)
+//        clientChannel.write(writeBuffer,writeBuffer,new Aio)
     }
 }
