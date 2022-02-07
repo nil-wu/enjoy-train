@@ -57,6 +57,7 @@ public class FindDirsFiles extends RecursiveAction {
                 otherWork = otherWork + 1;
             }
             System.out.println("Main Thread done sth......,otherWork=" + otherWork);
+            task.join();//阻塞的方法，异步阻塞
             System.out.println("Task end");
         } catch (InterruptedException e) {
             e.printStackTrace();
