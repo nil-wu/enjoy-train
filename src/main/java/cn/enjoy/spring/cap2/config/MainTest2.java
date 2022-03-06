@@ -8,8 +8,7 @@ public class MainTest2 {
     public static void main(String[] args) {
         ApplicationContext ac = new AnnotationConfigApplicationContext(MainConfig2.class);
         String[] beanDefinitionNames = ac.getBeanDefinitionNames();
-        for (String beean :
-                beanDefinitionNames) {
+        for (String beean : beanDefinitionNames) {
             System.out.println(beean);
         }
     }
