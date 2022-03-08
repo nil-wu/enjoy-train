@@ -8,7 +8,7 @@ public class MainTest7 {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(Cap7Config.class);
         System.out.println("容器初始化完成");
-        ac.getBean("bike");
+//        ac.getBean("bike");
         ac.close();
     }
 
