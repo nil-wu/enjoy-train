@@ -10,14 +10,14 @@ public class TestService {
 
     @Qualifier("testDao")
     @Autowired
-    private TestDao testDao;
+    private TestDao testDao3;
 
     public TestDao getTestDao() {
-        return testDao;
+        return testDao3;
     }
 
     public void printLn() {
-        System.out.println(testDao);
+        System.out.println(testDao3);
     }
 
 }

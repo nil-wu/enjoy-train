@@ -10,7 +10,8 @@ import org.springframework.context.annotation.*;
 @ComponentScan({
         "cn.enjoy.spring.cap9.controller",
         "cn.enjoy.spring.cap9.service",
-        "cn.enjoy.spring.cap9.dao"
+        "cn.enjoy.spring.cap9.dao",
+        "cn.enjoy.spring.cap9.bean"
 })
 public class Cap9MainConfig {
 

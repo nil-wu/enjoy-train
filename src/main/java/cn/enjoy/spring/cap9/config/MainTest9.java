@@ -1,5 +1,7 @@
 package cn.enjoy.spring.cap9.config;
 
+import cn.enjoy.spring.cap9.bean.Moon;
+import cn.enjoy.spring.cap9.bean.Sun;
 import cn.enjoy.spring.cap9.dao.TestDao;
 import cn.enjoy.spring.cap9.service.TestService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -18,6 +20,9 @@ public class MainTest9 {
 
         TestService testService = (TestService)ac.getBean("testService");
         testService.printLn();
+
+        Sun sun = ac.getBean(Sun.class);
+        System.out.println(sun.getMoon());
 
     }
 
