@@ -10,6 +10,10 @@ public class TestService {
     @Autowired
     private TestDao testDao;
 
+    public TestDao getTestDao() {
+        return testDao;
+    }
+
     public void printLn() {
         System.out.println(testDao);
     }
