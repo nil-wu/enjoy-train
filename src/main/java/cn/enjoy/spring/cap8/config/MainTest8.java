@@ -1,6 +1,7 @@
 package cn.enjoy.spring.cap8.config;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.core.env.ConfigurableEnvironment;
 
 public class MainTest8 {
 
@@ -14,6 +15,10 @@ public class MainTest8 {
 
         Bird bird = (Bird) ac.getBean("bird");
         System.out.println(bird);
+
+        ConfigurableEnvironment environment = ac.getEnvironment();
+        String property = environment.getProperty("bird.color");
+        System.out.println(property);
 
         System.out.println("IOC容器创建完成.....");
     }
