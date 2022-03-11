@@ -8,10 +8,17 @@ public class MainTest9 {
 
     public static void main(String[] args) {
         AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(Cap9MainConfig.class);
-        TestDao testDao = (TestDao)ac.getBean("testDao");
-        TestService testService = (TestService)ac.getBean("testService");
+//        TestDao testDao1 = (TestDao)ac.getBean("testDao");
+//        TestService testService = (TestService)ac.getBean("testService");
+//
+//        System.out.println(testDao1 == testService.getTestDao());
 
-        System.out.println(testDao == testService.getTestDao());
+//        TestDao testDao = (TestDao)ac.getBean(TestDao.class);
+//        System.out.println(testDao);
+
+        TestService testService = (TestService)ac.getBean("testService");
+        testService.printLn();
+
     }
 
 }
