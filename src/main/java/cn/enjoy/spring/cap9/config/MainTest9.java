@@ -21,6 +21,9 @@ public class MainTest9 {
         TestService testService = (TestService)ac.getBean("testService");
         testService.printLn();
 
+        Moon moon = ac.getBean(Moon.class);
+        System.out.println(moon);
+
         Sun sun = ac.getBean(Sun.class);
         System.out.println(sun.getMoon());
 

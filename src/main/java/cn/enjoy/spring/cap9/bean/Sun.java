@@ -12,16 +12,18 @@ public class Sun {
 //        System.out.println(toString());
 //    }
 
-    public Sun(Moon moon) {
+//    @Autowired
+    public Sun( Moon moon) {
         this.moon = moon;
+        System.out.println("Sun....constructor....");
     }
 
     public Moon getMoon() {
         return moon;
     }
 
-    @Autowired
-    public void setMoon(Moon moon) {
+//    @Autowired
+    public void setMoon(@Autowired Moon moon) {
         this.moon = moon;
     }
 
