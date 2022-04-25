@@ -2,11 +2,13 @@ package cn.enjoy.spring.init.config;
 
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.util.StringUtils;
 
 public class MainTest7 {
 
     public static void main(String[] args) {
+        new ClassPathXmlApplicationContext("");
         AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(Cap7MainConfig.class);
 
 //        Object bean = ac.getBean("&cn.enjoy.spring.bean.JamesFactoryBean");
