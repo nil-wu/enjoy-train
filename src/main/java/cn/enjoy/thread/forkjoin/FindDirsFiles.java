@@ -48,6 +48,7 @@ public class FindDirsFiles extends RecursiveAction {
         try {
             ForkJoinPool forkJoinPool = new ForkJoinPool();
             FindDirsFiles task = new FindDirsFiles(new File("F:/"));
+            forkJoinPool.execute(task);
             System.out.println("Task is Running......");
 
             //做点其他工作，跟本次测试关系不大，理解为是在做点其他工作，区分异步就可以
@@ -57,8 +58,17 @@ public class FindDirsFiles extends RecursiveAction {
                 otherWork = otherWork + 1;
             }
             System.out.println("Main Thread done sth......,otherWork=" + otherWork);
-            task.join();//阻塞的方法，异步阻塞
+
+            //阻塞的方法，异步阻塞
+            task.join();
             System.out.println("Task end");
+
+            //上面实际就执行了4行代码
+//            ForkJoinPool forkJoinPool = new ForkJoinPool();
+//            FindDirsFiles task = new FindDirsFiles(new File("F:/"));
+//            forkJoinPool.execute(task);
+//            task.join();
+
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
