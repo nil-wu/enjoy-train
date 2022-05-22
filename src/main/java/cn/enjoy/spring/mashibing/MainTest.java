@@ -8,10 +8,14 @@ public class MainTest {
 
     public static void main(String[] args) {
 
-        ApplicationContext ac = new ClassPathXmlApplicationContext("beans.xml");
-        Person person = (Person)ac.getBean("person");
+//        ApplicationContext ac = new ClassPathXmlApplicationContext("beans.xml");
+//        Person person = (Person)ac.getBean("person");
+//
+//        System.out.println(person);
 
-        System.out.println(person);
+
+        ApplicationContext ac = new ClassPathXmlApplicationContext("spring-${username}.xml");
+
 
     }
 
