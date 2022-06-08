@@ -34,6 +34,11 @@ public class SqlConnectImpl implements Connection {
     }
 
     @Override
+    public void commit() throws SQLException {
+        SleepTools.ms(70);
+    }
+
+    @Override
     public PreparedStatement prepareStatement(String sql) throws SQLException {
         return null;
     }
@@ -58,10 +63,7 @@ public class SqlConnectImpl implements Connection {
         return false;
     }
 
-    @Override
-    public void commit() throws SQLException {
-        SleepTools.ms(70);
-    }
+
 
     @Override
     public void rollback() throws SQLException {
