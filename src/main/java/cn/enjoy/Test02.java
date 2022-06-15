@@ -18,7 +18,7 @@ public class Test02 {
     private final static String CHARSETNAME = "utf-8";
 
     public static void main(String[] args) {
-        String path = "F:\\claim_info.txt";
+        String path = "F:\\claim_delegate.txt";
 
         String json = readTxt(path);
 //        System.out.println(json);
@@ -35,6 +35,9 @@ public class Test02 {
 //            System.out.println(payLoad);
             JSONObject jsonObject = JSON.parseObject(payLoad);
             String registNo = jsonObject.getJSONObject("body").getString("registNo");
+            if (registNo == null) {
+                registNo = jsonObject.getJSONObject("body").getString("REGISTNO");
+            }
 //            String registNo = jsonObject.getJSONObject("body").getString("REGISTNO");
             System.out.println(registNo);
         }
